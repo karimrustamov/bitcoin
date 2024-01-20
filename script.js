@@ -1,4 +1,4 @@
-const API_KEY = '7I6IA76ICT9W8AC3';
+const API_KEY = 'AZDYE9MS3PVGAMWG';
 let month = ['2022-01-31', '2022-02-28', '2022-03-31', '2022-04-30', '2022-05-31', '2022-06-30', '2022-07-31', '2022-08-31', '2022-09-30', '2022-10-31', '2022-11-30', '2022-12-31', '2023-01-31', '2023-02-28', '2023-03-31', '2023-04-30', '2023-05-31'];
 let course = [];
 
@@ -22,9 +22,9 @@ async function loadMonthlyCourse() {
     let response = await fetch(url);
     let responseAsJson = await response.json();
 
-    console.log(responseAsJson);
+    //console.log(responseAsJson['Time Series (Digital Currency Monthly)']['2022-01-31']['1a. open (EUR)']);
 
-    let monthlyCourse = responseAsJson['Time Series (Digital Corrency Monthly)'];
+    let monthlyCourse = responseAsJson['Time Series (Digital Currency Monthly)'];
 
     for (let i = 0; i < month.length; i++) {
         const courseEachMonth = Math.round(monthlyCourse[month[i]]['1a. open (EUR)']);
